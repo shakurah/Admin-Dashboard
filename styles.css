@@ -11,8 +11,8 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    height: 100vh;
+    grid-template-rows: repeat(3, 1fr), 0px ;
+    min-height: 100vh;
     width: 100%;
     row-gap: 20px;
 
@@ -208,17 +208,23 @@ nav svg {
 }
 
 .article{
-    display: grid;
     margin-left: 15px;
-    gap: 20px;
+    grid-row: 2 / 4;
+}
+.article h4{
+
+    margin-bottom: 1.2rem;
+}
+.article .card-grid{
+    display: grid;
+    
+    justify-content: space-around;
+    row-gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
     
     
 }
-.article h4{
-    display: block;
 
-}
 
 .card {
     display: grid;
@@ -256,4 +262,96 @@ nav svg {
     width: 1.1rem;
     height: 1.1rem;
 }
+.right-col {
+    grid-row: 2 / 4;       
+    grid-column: 3 / 4;
+    display: grid;
+    grid-template-rows: auto 1fr ;
+    row-gap: 20px; 
+    
+}
 
+
+.announcements{
+    grid-row: 1;
+        
+}
+.announcements-content{
+    display: grid;
+    background: white;
+    width: 250px;
+    
+    padding: 20px 20px 0px;
+    grid-template-columns: auto;
+}
+.announcements-content .info{
+    font-size: 0.7rem;
+    color: gray;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    
+}
+
+.announcements-content .title{
+    font-size: 0.8rem;
+
+}
+.no-border{
+    border: none;
+}
+.first-ann{
+    border-radius: 5px 5px 0px 0px;
+}
+.last-ann{
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 2px 2px 5px 1px  lightgray;
+}
+.announcements h4{
+    margin-bottom: 1.2rem;
+
+}
+
+.trending{
+    grid-row: 2;
+    align-self: end;
+       
+}
+.trending h4{
+    margin-bottom: 1rem;
+}
+
+.trending-card{
+    display: grid;
+    background-color: white;
+    grid-template-columns: 1fr 3fr;
+    
+    border-radius: 5px;
+    width: 250px;
+    height: auto;
+    padding: 15px;
+    
+}
+
+.trending-users-img-container{
+    max-width: 2rem;
+    max-height: 1.8rem;
+
+}
+.trending-users-img-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 70%;
+}
+.trending-users-name{
+    display: flex;
+    flex-direction: column;
+
+}
+p.username {
+    font-size: 0.75rem;
+}
+
+p.user-title{
+    font-size: 0.7rem;
+    color: gray;
+}
